@@ -1,0 +1,114 @@
+# ============================================================
+# wifi-csi-eldercare
+# ============================================================
+
+# ---------- OS / editor ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+*.swp
+*.swo
+*~
+*.code-workspace
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.sqlite
+*.db
+
+# ---------- ESP-IDF / PlatformIO ----------
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.ci
+managed_components/
+dependencies.lock
+.pio/
+.pioenvs/
+.piolibdeps/
+*.bin
+*.elf
+*.map
+*.hex
+*.uf2
+!**/sdkconfig.defaults
+!**/partitions.csv
+
+# ---------- Flutter / Dart ----------
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.gradle/
+Pods/
+ios/Flutter/ephemeral/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+android/.gradle/
+android/local.properties
+android/app/debug/
+android/app/profile/
+android/app/release/
+android/key.properties
+*.jks
+*.keystore
+
+# ---------- Node / web ----------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- Secrets / env / certs ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+certs/
+
+# ---------- Logs ----------
+*.log
+logs/
+
+# ---------- Data / models / archives (large, local only) ----------
+ai/data/*
+!ai/data/.gitkeep
+ai/models/*
+!ai/models/.gitkeep
+*.onnx
+*.pt
+*.pth
+*.h5
+*.pkl
+*.joblib
+*.npy
+*.npz
+*.zip
+*.tar.gz
+*.tgz
+*.7z
+*.rar
