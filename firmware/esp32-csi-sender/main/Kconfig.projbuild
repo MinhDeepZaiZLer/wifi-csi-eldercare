@@ -1,0 +1,15 @@
+menu "ElderCare CSI Sender"
+
+config CSI_CHANNEL
+    int "WiFi channel (2.4 GHz)"
+    default 11
+    range 1 13
+    help
+        Must match the receiver. In WiFi+MQTT mode it must match the AP channel.
+
+config SEND_FREQUENCY
+    int "ESP-NOW send rate (Hz)"
+    default 100
+    range 10 200
+
+endmenu
