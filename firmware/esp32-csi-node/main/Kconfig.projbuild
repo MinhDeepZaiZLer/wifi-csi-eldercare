@@ -1,0 +1,71 @@
+menu "ElderCare CSI Node"
+
+choice LINK_MODE
+    prompt "Output mode"
+    default LINK_MODE_UART
+    help
+        UART mode prints CSI_DATA CSV plus INFER JSON for the PC bridge.
+        WiFi mode publishes features directly to ThingsBoard over MQTT.
+    config LINK_MODE_UART
+        bool "UART (PC bridge)"
+    config LINK_MODE_WIFI_MQTT
+        bool "WiFi + ThingsBoard MQTT"
+endchoice
+
+config UART_CSV_ENABLE
+    bool "Emit CSI_DATA CSV on UART"
+    default y
+    help
+        Required by csi_labeler. The PC bridge can ignore these lines.
+
+config CSI_CHANNEL
+    int "WiFi channel (2.4 GHz)"
+    default 11
+    range 1 13
+    help
+        Must match the sender. In WiFi mode it must also match the AP channel.
+
+config INFER_PERIOD_MS
+    int "Inference period (ms)"
+    default 1000
+    range 200 10000
+
+config TB_HOST
+    string "ThingsBoard host"
+    default "thingsboard.cloud"
+
+config TB_PORT
+    int "ThingsBoard MQTT port"
+    default 1883
+    range 1 65535
+
+config TB_TLS
+    bool "Use TLS (mqtts)"
+    default n
+
+config TB_TOKEN
+    string "ThingsBoard access token"
+    default ""
+
+config TB_SUBJECT
+    string "Subject id"
+    default "subject-01"
+
+config TB_ROOM
+    string "Room id"
+    default "room-01"
+
+config TB_PUBLISH_INTERVAL_S
+    int "Telemetry publish interval (s)"
+    default 15
+    range 5 300
+
+config WIFI_SSID
+    string "WiFi SSID (2.4 GHz)"
+    default ""
+
+config WIFI_PASSWORD
+    string "WiFi password"
+    default ""
+
+endmenu
